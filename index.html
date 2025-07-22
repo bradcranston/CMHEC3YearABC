@@ -8,10 +8,23 @@
     <title>JSDev</title>
   </head>
   <body>
-    <h1>Alright. You're set.</h1>
-      <h2 class="tintedBlackLeft">Now build something amazing!</h2>
-      <p>JS in FM is amazing</p>
-    <button type="button">Click Me!</button>
+    <div class="container">
+      <header class="header">
+        <h1>Customer Ranking - 3 Year Report</h1>
+        <div class="controls">
+          <label for="userFilter">Filter by User:</label>
+          <select id="userFilter">
+            <option value="">All Users</option>
+          </select>
+        </div>
+      </header>
+
+      <div class="report-container">
+        <div id="reportContent">
+          <!-- Report will be generated here -->
+        </div>
+      </div>
+    </div>
 
     <script type="module">
       import "./src/index.js";

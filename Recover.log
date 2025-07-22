@@ -1,0 +1,5 @@
+﻿Timestamp	Filename	Error	Message
+2025-07-16 16:52:08.915 -0400	jsDev.fmp12	0	*** Started consistency check of improperly closed file, total of 190 block(s) to check
+2025-07-16 16:52:08.916 -0400	jsDev.fmp12	8432	Page 190 marked free but not in free list
+2025-07-16 16:52:08.916 -0400	jsDev.fmp12	0	Reset maximum block sequence number to 919082
+2025-07-16 16:52:08.916 -0400	jsDev.fmp12	0	*** Completed consistency check, checked 190 block(s)
