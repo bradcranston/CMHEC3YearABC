@@ -4,6 +4,41 @@
   box-sizing: border-box;
 }
 
+/* Export overlay styles */
+.export-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.export-overlay.hide {
+  display: none;
+}
+.export-overlay .spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+.export-overlay .export-message {
+  color: #fff;
+  font-size: 1.2rem;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;
@@ -39,6 +74,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .controls label {
@@ -58,6 +94,55 @@ body {
 .controls select:focus {
   outline: none;
   border-color: #3498db;
+}
+
+.export-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.export-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.csv-btn {
+  background: #17a2b8;
+  color: white;
+}
+
+.csv-btn:hover {
+  background: #138496;
+  transform: translateY(-1px);
+}
+
+.pdf-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.pdf-btn:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.export-btn:active {
+  transform: translateY(0);
+}
+
+.export-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .report-container {
@@ -210,6 +295,17 @@ body {
   
   .controls select {
     min-width: 150px;
+  }
+  
+  .export-buttons {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .export-btn {
+    flex: 1;
+    min-width: 120px;
   }
   
   .report-table {

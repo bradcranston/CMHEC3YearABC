@@ -6,6 +6,9 @@
       @import "./src/style.css";
     </style>
     <title>JSDev</title>
+    <!-- Export libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -16,6 +19,14 @@
           <select id="userFilter">
             <option value="">All Users</option>
           </select>
+          <div class="export-buttons">
+            <button id="exportCSV" class="export-btn csv-btn">
+              📋 Export CSV
+            </button>
+            <button id="exportPDF" class="export-btn pdf-btn">
+              📄 Export to PDF
+            </button>
+          </div>
         </div>
       </header>
 
@@ -29,5 +40,10 @@
     <script type="module">
       import "./src/index.js";
     </script>
+    <!-- Exporting overlay -->
+    <div id="exportOverlay" class="export-overlay hide">
+      <div class="spinner"></div>
+      <div class="export-message">Exporting...</div>
+    </div>
   </body>
 </html>
